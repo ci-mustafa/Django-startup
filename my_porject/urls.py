@@ -19,7 +19,9 @@ from django.urls import path, include
 from hello_django import views as index_views
 
 urlpatterns = [
+    path("hello/", include("hello_django.urls")),
+    path("about/", include("about.urls")),
     path('admin/', admin.site.urls),
-    path("", include("hello_django.urls"), name="index")
+    
     # path('', index_views.index, name="index")
 ]
